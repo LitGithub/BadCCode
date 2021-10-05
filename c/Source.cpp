@@ -11,7 +11,7 @@ int main() {
 	int count = 0;
 	char upppercasealphabet[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 	char alphabet[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
-	int alphabetindex[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int alphabetindex[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int pangrams = 0;
 	for (int x = 0; x < 80; x++) {
 		sentence[x] = ' ';
@@ -26,7 +26,7 @@ int main() {
 			 linenum++;
 			 counter = 0;
 			 for (int i = 0; i < 80; i++) {
-					 for (int j = 0; j < 25; j++) {
+					 for (int j = 0; j < 26; j++) {
 						 if (sentence[i] == alphabet[j]) {
 							 if (alphabetindex[j] == 0) {
 								 count++;
@@ -41,7 +41,7 @@ int main() {
 				 }
 			 }
 			 for (int i = 0; i < 80; i++) {
-				 for (int j = 0; j < 25; j++) {
+				 for (int j = 0; j < 26; j++) {
 					 if (sentence[i] == upppercasealphabet[j]) {
 						 if (alphabetindex[j] == 0) {
 							 count++;
@@ -55,7 +55,7 @@ int main() {
 					 has = false;
 				 }
 			 }
-			 if (count == 25) {
+			 if (count == 26) {
 				 printf("%d: ", linenum);
 				 for (int x = 0; x < 80; x++) {
 					 printf("%c", sentence[x]);
@@ -64,7 +64,7 @@ int main() {
 				 pangrams++;
 			 }
 			 count = 0;
-			 for (int j = 0; j < 25; j++) {
+			 for (int j = 0; j < 26; j++) {
 				 alphabetindex[j] = 0;
 			 }
 			 for (int x = 0; x < 80; x++) {
